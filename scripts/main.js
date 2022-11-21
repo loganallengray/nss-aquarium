@@ -1,5 +1,7 @@
 // Import the FishList function from the correct module
-import { FishList } from './FishList.js'
+import { FishList } from './fish.js'
+import { tipList } from './tips.js'
+import { locationList } from './locations.js'
 
 /*
     What is the CSS selector for the element where you
@@ -9,6 +11,11 @@ import { FishList } from './FishList.js'
     Use # for elements with an "id" attribute
  */
 
-const parentHTMLElement = document.querySelector("#fish_container")
+const fishHTMLElement = document.querySelector("#fish_container")
+fishHTMLElement.innerHTML = FishList()
 
-parentHTMLElement.innerHTML = FishList()
+const tipsHTMLElement = document.querySelector("#tip_container")
+tipsHTMLElement.innerHTML = tipList()
+
+const locationsHTMLElement = document.querySelector("#location_container")
+locationsHTMLElement.innerHTML = locationList()

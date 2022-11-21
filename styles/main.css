@@ -25,6 +25,13 @@ main {
     flex-basis: 80%;
 }
 
+/* Article headers */
+.article_header {
+    font-size: 1.7em;
+    margin: 10px;
+    text-align: center;
+}
+
 /* Containers */
 .container {
     display: flex;

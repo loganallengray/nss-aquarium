@@ -1,10 +1,56 @@
 // Import the function that returns a copy of the fish array
 import { getFish } from './database.js'
 
-export const FishList = () => {
-    // Invoke the function that you imported from the database module
-    const fishes = getFish()
+const fishes = getFish()
 
+
+// Get holy fish
+export const mostHolyFish = () => {
+    // 3, 6, 9, 12, etc... fish
+    const holyFish = []
+
+    for (const fish of fishes) {
+        if (fish % 3 === 0) {
+            holyFish.push(fish);
+        }
+    }
+
+    return holyFish
+}
+
+// get soldier fish
+export const soldierFish = () => {
+    // 5, 10, 15, 20, 25, etc... fish
+    const soldiers = [];
+
+    for (const fish of fishes) {
+        if (fish % 3 !== 0 && fish % 5 === 0) {
+            soldiers.push(fish);
+        }
+    }
+
+    return soldiers;
+}
+
+// get regular fish
+export const nonHolyFish = () => {
+    // Any fish not a multiple of 3 or 5
+    const regularFish = [];
+
+    for (const fish of fishes) {
+        if (fish % 3 !== 0 && fish % 5 !== 0) {
+            holyFish.push(fish);
+        }
+    }
+
+    return regularFish
+}
+
+/* 
+    FISHLIST TO HTML
+*/
+
+export const FishList = () => {
     // Start building a string filled with HTML syntax
     let htmlString = '<article id="fishList" class="container">'
 
